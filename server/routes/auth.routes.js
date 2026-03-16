@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const { loginAdmin, logoutAdmin } = require("../controllers/auth.controller")
+const { loginAdmin, logoutAdmin } = require("../controllers/auth.controller.js")
 
 router
     .post("/login", loginAdmin)

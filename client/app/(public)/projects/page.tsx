@@ -1,0 +1,58 @@
+"use client"
+import { useGetProjectsQuery } from '@/redux/apis/user.api'
+import React from 'react'
+
+const Projects = () => {
+    const { data } = useGetProjectsQuery()
+
+    return <>
+        <div className="container" style={{ marginTop: "110px" }}>
+            <h2 className="text-center mb-4">My Projects</h2>
+            <div className="row g-4">
+                {data?.result?.map(item => (
+                    <div className="col-md-4" key={item._id}>
+                        <div className="card h-100 shadow-sm border-0">
+                            <img
+                                src={item.image}
+                                className="card-img-top"
+                                style={{ height: "200px", objectFit: "cover" }}
+                                alt={item.title}
+                            />
+                            <div className="card-body d-flex flex-column">
+                                <h5 className="card-title">{item.title}</h5>
+                                <p className="card-text text-muted small">
+                                    {item.description}
+                                </p>
+                                <div className="mb-3">
+                                    {item.skills.map((skill, index) => (
+                                        <span
+                                            key={index}
+                                            className="badge bg-secondary me-2 mb-2"
+                                            style={{ fontSize: "11px" }}
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="mt-auto d-flex gap-3">
+                                    <a href={item.githublink} target="_blank" className="btn btn-dark btn-sm">
+                                        <i className="bi bi-github me-1"></i>
+                                        GitHub
+                                    </a>
+
+                                    <a href={item.livelink} target="_blank" className="btn btn-success btn-sm">
+                                        <i className="bi bi-arrow-up-right me-1"></i>
+                                        Live
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+
+            </div>
+        </div>
+    </>
+}
+
+export default Projects

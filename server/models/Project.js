@@ -8,9 +8,9 @@ module.exports = mongoose.model("project", new mongoose.Schema({
 
     skills: [{ type: String, required: true }],
 
-    githubLink: { type: String, required: true },
+    githublink: { type: String, required: true },
 
-    liveLink: { type: String, required: true },
+    livelink: { type: String, required: true },
 
     image: { type: String, required: true }
 

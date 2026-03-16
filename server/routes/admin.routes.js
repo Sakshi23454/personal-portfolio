@@ -1,22 +1,30 @@
-const { addProject, updateProject, deleteProject, addSkill, deleteSkill, addExperience, deleteExperience, updateExperience, addEducation, updateEducation, deleteEducation, addProfile, updateProfile, addResume, getContacts } = require("../controllers/admin.controller")
+const { addProject, updateProject, deleteProject, addSkill, deleteSkill, addExperience, deleteExperience, updateExperience, addEducation, updateEducation, deleteEducation, addProfile, updateProfile, addResume, getContacts, deleteResume, addStats, readSkill, readProjects, deleteProfile, readExperience, readStats, readProfile, readEducation } = require("../controllers/admin.controller.js")
 
 const router = require("express").Router()
 
 router
     .post("/addproject", addProject)
+    .get("/readprojects", readProjects)
     .put("/update-project/:pid", updateProject)
     .delete("/delete-project/:pid", deleteProject)
     .post("/addskill", addSkill)
+    .get("/readskill", readSkill)
     .delete("/delete-skill/:sid", deleteSkill)
     .post("/addexperience", addExperience)
+    .get("/readexperience", readExperience)
     .put("/update-experience/:eid", updateExperience)
     .delete("/delete-experience/:eid", deleteExperience)
     .post("/addeducation", addEducation)
+    .get("/readeducation", readEducation)
     .put("/update-education/:eid", updateEducation)
     .delete("/delete-education/:eid", deleteEducation)
     .post("/addprofile", addProfile)
     .put("/update-profile/:pid", updateProfile)
+    .get("/readprofile", readProfile)
     .post("/addresume", addResume)
+    .delete("/deleteresume", deleteResume)
     .get("/getcontacts", getContacts)
+    .post("/addstats", addStats)
+    .get("/readstats", readStats)
 
 module.exports = router
