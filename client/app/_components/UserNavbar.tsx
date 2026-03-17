@@ -19,7 +19,7 @@ const UserNavbar = () => {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
-    return (
+    return <>
         <nav
             className="navbar navbar-expand-lg fixed-top border-bottom shadow-sm"
             style={{
@@ -53,7 +53,7 @@ const UserNavbar = () => {
                     </div>
                 </div>
 
-                <div className="d-flex gap-4 fs-5 pe-5">
+                <div className="d-flex gap-4 fs-5 pe-5 social-icons">
                     {data?.result?.github && (
                         <a href={data?.result.github} target="_blank" className="text-dark">
                             <i className="bi bi-github"></i>
@@ -68,7 +68,16 @@ const UserNavbar = () => {
                 </div>
             </div>
         </nav>
-    )
+
+        <style jsx>{`
+        @media (max-width: 768px) {
+        .social-icons {
+        margin-left: 22px !important; /* ps-2 */
+        padding-right: 0 !important;
+        }
+  }
+`}</style>
+    </>
 }
 
 export default UserNavbar
