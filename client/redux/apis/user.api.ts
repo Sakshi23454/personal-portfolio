@@ -5,7 +5,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 export const userApi = createApi({
     reducerPath: "userApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${APP_URL}/api/user`,
+        // baseUrl: `${APP_URL}/api/user`,
+        baseUrl: `/api/user`,
         credentials: "include"
     }),
     tagTypes: [],

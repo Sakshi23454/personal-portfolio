@@ -9,16 +9,16 @@ const Home = () => {
     const { data: skillData } = useGetSkillsQuery()
 
     return (
-        <div className="container" style={{ marginTop: "150px" }}>
+        <div className="container-fluid" style={{ marginTop: "150px" }}>
             <div className="row align-items-center">
-                <div className="col-md-6">
-                    <h1 className="fw-bold"> Hi, I'm</h1>
-                    <h1 className="fw-bold text-primary fs-1">{data?.result?.name}</h1>
-                    <p className="text-muted mt-3 fs-5" style={{ maxWidth: "500px" }}>
+                <div className="col-md-6 ps-5">
+                    <h1 className="fw-bold ps-5"> Hi, I'm</h1>
+                    <h1 className="fw-bold text-primary fs-1 ps-5">{data?.result?.name}</h1>
+                    <p className="text-muted mt-3 fs-5 ps-5" style={{ maxWidth: "500px" }}>
                         {data?.result?.bio || "MERN Stack Developer crafting beautiful web experiences"}
                     </p>
-                    <p className="text-muted mt-2 fs-5">A MERN Stack Developer focused on building fast, scalable, and responsive web applications with modern technologies.</p>
-                    <div className="d-flex gap-3 mt-4">
+                    <p className="text-muted mt-2 fs-5 ps-5">A MERN Stack Developer focused on building fast, scalable, and responsive web applications with modern technologies.</p>
+                    <div className="d-flex gap-3 mt-4 ps-5">
                         <a href="/contact" className="btn btn-outline-dark">Let's Connect</a>
                         {data?.result?.resume && (
                             <a href={data.result.resume} download className="btn btn-outline-primary"  >
@@ -26,7 +26,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="col-md-6 text-center mt-4 mt-md-0">
+                <div className="col-md-6 text-center mt-4 mt-md-0 pe-5 pb-3">
                     {data?.result?.profilePic && (
                         <img src={data.result.profilePic} alt="profile" style={{ width: "400px", height: "400px", borderRadius: "50%", objectFit: "cover", border: "13px solid #cfe8ff" }} />
                     )}
@@ -34,14 +34,14 @@ const Home = () => {
             </div>
 
             {/* Stats Section */}
-            <div className="section-2 bg-light" >
-                <div className="row align-items-center mt-5 pt-5  g-0">
-                    <div className="col-md-4 mb-4">
+            <div className="container-fluid section-2 bg-light mt-5 pb-5" >
+                <div className="row align-items-center mt-5 pt-5 g-0">
+                    <div className="col-md-4 mb-4 ps-5">
                         <a href="/about" className="btn px-4 py-3 fw-semibold" style={{ backgroundColor: "#4da6ff", color: "white", borderRadius: "8px" }} > Know More About Me</a>
                     </div>
 
                     <div className="col-md-8">
-                        <div className="row g-3">
+                        <div className="row g-3 me-5">
                             <div className="col-6 col-md-3">
                                 <div className="card text-center shadow-sm border-0">
                                     <div className="card-body">
@@ -82,7 +82,7 @@ const Home = () => {
             </div>
 
             {/* Projects  section*/}
-            <div className="section-3 py-5 mt-3">
+            <div className="container section-3 py-5 mt-3">
                 <div className="text-center mb-5">
                     <h2 className="fw-bold">Projects</h2>
                     <p className="text-muted">
@@ -109,7 +109,7 @@ const Home = () => {
             </div>
 
             {/* Skills section */}
-            <div className="section-4 bg-light py-5">
+            <div className="section-4 bg-light py-5 mt-4">
                 <div className="text-center mb-5">
                     <h2 className="fw-bold">Skills</h2>
                 </div>
@@ -136,7 +136,7 @@ const Home = () => {
 
 
             {/* contact section */}
-            <div className="section-5 py-5 text-center mt-3">
+            <div className="section-5 py-5 text-center mt-5">
                 <div className="container">
                     {/* <h2 className="fw-bold mb-3">Contact Me</h2> */}
                     <p className="text-muted mb-4" style={{ maxWidth: "600px", margin: "auto" }}>
