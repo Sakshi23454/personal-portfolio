@@ -26,7 +26,7 @@ const Experience = () => {
                                 {item.duration}
                             </span>
                         </div>
-                        <p className="text-muted mt-2">
+                        <p className="text-muted mt-2 hero-text">
                             {item.description}
                         </p>
                     </div>
@@ -34,6 +34,14 @@ const Experience = () => {
             ))}
 
         </div>
+
+        <style jsx>{`
+      @media (max-width: 768px) {
+        .hero-text {
+            text-align: justify !important;
+        }
+    `}</style>
+
     </>
 }
 
