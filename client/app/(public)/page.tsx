@@ -8,7 +8,7 @@ const Home = () => {
     const { data: projectData } = useGetProjectsQuery()
     const { data: skillData } = useGetSkillsQuery()
 
-    return (
+    return <>
         <div className="container-fluid overflow-hidden" style={{ marginTop: "150px" }}>
 
             {/* Hero Section */}
@@ -25,7 +25,7 @@ const Home = () => {
                         {data?.result?.bio || "MERN Stack Developer crafting beautiful web experiences"}
                     </p>
 
-                    <p className="text-muted mt-2 fs-5 ps-5">
+                    <p className="text-muted mt-2 fs-5 ps-5 hero-text">
                         A MERN Stack Developer focused on building fast, scalable, and responsive web applications with modern technologies.
                     </p>
 
@@ -268,7 +268,37 @@ const Home = () => {
             </div>
 
         </div>
-    )
+
+        <style jsx>{`
+      @media (max-width: 768px) {
+
+        /* Remove ps-5 padding in hero section */
+        .ps-5 {
+          padding-left: 0 !important;
+        }
+
+        /* Make profile image proper circle and smaller */
+        img[alt="profile"] {
+          width: 250px !important;
+          height: 250px !important;
+          border-radius: 50% !important;
+          object-fit: cover !important;
+        }
+
+        .hero-text {
+            text-align: justify !important;
+        }
+
+        /* Justify contact text */
+        .section-5 p {
+          text-align: justify !important;
+        }
+
+      }
+    `}</style>
+
+
+    </>
 }
 
 export default Home
