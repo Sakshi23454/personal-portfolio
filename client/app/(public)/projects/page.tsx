@@ -7,7 +7,7 @@ const Projects = () => {
 
     return <>
         <div className="container" style={{ marginTop: "110px" }}>
-            <h2 className="text-center mb-4">My Projects</h2>
+            <h2 className="text-center mb-4  project-title">My Projects</h2>
             <div className="row g-4">
                 {data?.result?.map(item => (
                     <div className="col-md-4" key={item._id}>
@@ -20,7 +20,7 @@ const Projects = () => {
                             />
                             <div className="card-body d-flex flex-column">
                                 <h5 className="card-title">{item.title}</h5>
-                                <p className="card-text text-muted small">
+                                <p className="card-text text-muted small hero-text">
                                     {item.description}
                                 </p>
                                 <div className="mb-3">
@@ -52,6 +52,17 @@ const Projects = () => {
 
             </div>
         </div>
+
+        <style jsx>{`
+  @media (max-width: 768px) {
+    .project-title {
+      padding-top: 20px; 
+    }
+       .hero-text {
+            text-align: justify !important;
+        }
+  }
+`}</style>
     </>
 }
 

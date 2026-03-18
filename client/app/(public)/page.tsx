@@ -48,7 +48,7 @@ const Home = () => {
 
                 </div>
 
-                <div className="col-md-6 text-center mt-4 mt-md-0 pe-md-5 pb-3">
+                <div className="col-md-6 text-center mt-4 mt-md-0 pe-md-5 pb-3 hero-image">
 
                     {data?.result?.profilePic && (
                         <img
@@ -162,7 +162,7 @@ const Home = () => {
 
                                 <div className="card-body">
                                     <h5 className="fw-bold">{item.title}</h5>
-                                    <p className="text-muted small">{item.description}</p>
+                                    <p className="text-muted small hero-text">{item.description}</p>
                                 </div>
 
                             </div>
@@ -281,6 +281,10 @@ const Home = () => {
           height: 250px !important;
           border-radius: 50% !important;
           object-fit: cover !important;
+        }
+
+         .hero-image {
+            padding-top: 24px;         
         }
 
         .hero-text {

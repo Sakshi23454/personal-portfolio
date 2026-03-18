@@ -7,11 +7,11 @@ const Experience = () => {
 
     return <>
         <div className="container" style={{ marginTop: "110px" }}>
-            <h2 className="text-center mb-4">Work Experience</h2>
+            <h2 className="text-center mb-4 experience-top">Work Experience</h2>
             {data?.result?.map((item) => (
                 <div key={item._id} className="card shadow-sm mb-4 border-0  bg-light">
                     <div className="card-body">
-                        <div className="d-flex justify-content-between align-items-start">
+                        <div className="d-flex justify-content-between align-items-start experience-header">
                             <div>
                                 <h5 className="fw-bold mb-1">
                                     {item.role}
@@ -39,6 +39,18 @@ const Experience = () => {
       @media (max-width: 768px) {
         .hero-text {
             text-align: justify !important;
+        }
+        .experience-top {
+            padding-top: 20px; 
+        }
+        .experience-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        .experience-header span {
+            margin-top: 4px;
         }
     `}</style>
 

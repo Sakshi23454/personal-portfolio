@@ -49,7 +49,7 @@ const Contact = () => {
 
     return <>
         <div className="container" style={{ marginTop: "110px" }}>
-            <h2 className="text-center mb-4">Contact Me</h2>
+            <h2 className="text-center mb-4 hero-text">Contact Me</h2>
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     <div className="card shadow-sm">
@@ -97,6 +97,14 @@ const Contact = () => {
                 </div>
             </div>
         </div>
+
+        <style jsx>{`
+      @media (max-width: 768px) {
+        .hero-text {
+            padding-top: 20px;         
+        }
+    `}</style>
+
     </>
 }
 

@@ -7,13 +7,13 @@ const UserFooter = () => {
     const { data } = useGetProfileQuery()
     const profile = data?.result
 
-    return (
+    return <>
         <footer className="bg-light pt-5 pb-3 mt-5 border-top">
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 mb-4">
                         <h5 className="fw-bold">{profile?.name}</h5>
-                        <p className="text-muted small">
+                        <p className="text-muted small hero-text">
                             Passionate MERN Stack Developer skilled in building scalable,
                             responsive, and user-centric web applications.
                         </p>
@@ -56,7 +56,17 @@ const UserFooter = () => {
                 </div>
             </div>
         </footer>
-    )
+
+        <style jsx>{`
+      @media (max-width: 768px) {
+        .hero-text {
+            text-align: justify !important;
+        }
+      }
+    `}</style>
+
+
+    </>
 }
 
 export default UserFooter
