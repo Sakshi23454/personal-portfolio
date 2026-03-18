@@ -272,12 +272,10 @@ const Home = () => {
         <style jsx>{`
       @media (max-width: 768px) {
 
-        /* Remove ps-5 padding in hero section */
         .ps-5 {
           padding-left: 0 !important;
         }
 
-        /* Make profile image proper circle and smaller */
         img[alt="profile"] {
           width: 250px !important;
           height: 250px !important;
@@ -289,7 +287,6 @@ const Home = () => {
             text-align: justify !important;
         }
 
-        /* Justify contact text */
         .section-5 p {
           text-align: justify !important;
         }

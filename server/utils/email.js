@@ -1,18 +1,17 @@
 const nodemailer = require("nodemailer")
 
-exports.sendEmail = ({ email, subject, message }) => new Promise((resolve, reject) => {
+exports.sendEmail = ({ email, subject, message }) => new Promise(async (resolve, reject) => {
     try {
         const transport = nodemailer.createTransport({
             service: "gmail",
             auth: { user: process.env.EMAIL, pass: process.env.EMAIL_PASS }
         })
 
-        transport.sendMail({
+        await transport.sendMail({
             to: email,
             subject,
             html: message
         })
-        console.log("email send success")
         resolve("email send success")
     } catch (error) {
         console.log(error)
