@@ -2,7 +2,7 @@
 
 A full-stack Portfolio Website designed to present personal projects, experience, and professional information in a clean and modern interface. The platform focuses on performance, scalability, and smooth user experience, with a well-structured frontend and a robust backend system. It also includes integrated media handling, ensuring efficient content management and seamless communication.
 
-
+---
 
 🚀 Key Features
 
@@ -22,7 +22,7 @@ A full-stack Portfolio Website designed to present personal projects, experience
 
 🔐 Scalable backend.
 
-
+---
 
 🛠️ Technologies Used
 
@@ -38,7 +38,7 @@ Cloud Services: Cloudinary (media storage)
 
 Email Services: Custom email templates (Node mailer / SMTP)
 
-
+---
 
 💡 Purpose
 
