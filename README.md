@@ -3,6 +3,7 @@
 A full-stack Portfolio Website designed to present personal projects, experience, and professional information in a clean and modern interface. The platform focuses on performance, scalability, and smooth user experience, with a well-structured frontend and a robust backend system. It also includes integrated media handling, ensuring efficient content management and seamless communication.
 
 
+
 🚀 Key Features
 
 👩‍💻 Dynamic portfolio with real-time data (projects, skills, experience)
@@ -22,6 +23,7 @@ A full-stack Portfolio Website designed to present personal projects, experience
 🔐 Scalable backend.
 
 
+
 🛠️ Technologies Used
 
 Frontend: React, Next.js, Bootstrap
@@ -35,6 +37,7 @@ State Management: Redux
 Cloud Services: Cloudinary (media storage)
 
 Email Services: Custom email templates (Node mailer / SMTP)
+
 
 
 💡 Purpose
