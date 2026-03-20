@@ -20,7 +20,7 @@ const Projects = () => {
                             />
                             <div className="card-body d-flex flex-column">
                                 <h5 className="card-title">{item.title}</h5>
-                                <p className="card-text text-muted small hero-text">
+                                <p className="card-text text-muted small text-justify hero-text">
                                     {item.description}
                                 </p>
                                 <div className="mb-3">
@@ -61,6 +61,14 @@ const Projects = () => {
        .hero-text {
             text-align: justify !important;
         }
+  }
+
+  .text-justify{
+        text-align: justify !important;
+  }
+
+   body {
+    overflow-x: hidden;
   }
 `}</style>
     </>
