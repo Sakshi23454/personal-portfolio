@@ -205,6 +205,7 @@ export const adminApi = createApi({
                 invalidatesTags: ["profile"]
             }),
 
+
             addResume: builder.mutation<void, FormData>({
                 query: userData => {
                     return {

@@ -10,9 +10,6 @@ import z from 'zod'
 
 const About = () => {
 
-    // const [addProfilePic] = useAddProfileMutation()
-    // add update resume
-
     const [showForm, setShowForm] = useState(false)
     const [selectedabout, setselectedabout] = useState<string | null>(null)
     const { data } = useReadProfileQuery()
@@ -27,6 +24,7 @@ const About = () => {
         github: z.string().min(1).optional(),
         linkedin: z.string().min(1).optional(),
         location: z.string().min(1).optional(),
+        resume: z.string().min(1).optional(),
     }) satisfies z.ZodType<PROFILE_UPDATE_REQUEST>
 
     const { handleSubmit, register, reset, formState: { errors, touchedFields } } = useForm<PROFILE_UPDATE_REQUEST>({
@@ -39,6 +37,7 @@ const About = () => {
             github: "",
             linkedin: "",
             location: "",
+            resume: "",
         },
         resolver: zodResolver(aboutSchema)
     })
@@ -48,7 +47,7 @@ const About = () => {
             if (selectedabout) {
                 await updateProfile({ ...data, _id: selectedabout }).unwrap()
                 toast.success("profile update succefully")
-                reset({ name: "", title: "", email: "", mobile: "", bio: "", github: "", linkedin: "", location: "" })
+                reset({ name: "", title: "", email: "", mobile: "", bio: "", github: "", linkedin: "", location: "", resume: "" })
                 setselectedabout(null)
                 setShowForm(false)
             }
@@ -69,6 +68,7 @@ const About = () => {
             github: data.github,
             linkedin: data.linkedin,
             location: data.location,
+            resume: data.resume,
         })
     }
 
@@ -153,6 +153,14 @@ const About = () => {
                                     />
                                     <div className="invalid-feedback">{errors && errors.location?.message}</div>
 
+                                    <input
+                                        {...register("resume")}
+                                        type="text"
+                                        placeholder="add/update resume"
+                                        className={handleClasses("resume")}
+                                    />
+                                    <div className="invalid-feedback">{errors && errors.resume?.message}</div>
+
                                     <button disabled={isLoading} type="submit" className="btn btn-warning w-100 mt-3">
                                         {isLoading
                                             ? <span className="spinner-border spinner-border-sm"></span>
@@ -181,6 +189,7 @@ const About = () => {
                                 <th>github</th>
                                 <th>linkedin</th>
                                 <th>location</th>
+                                <th>resume</th>
                                 <th>actions</th>
                             </tr>
                         </thead>
@@ -196,6 +205,7 @@ const About = () => {
                                 <td>{data.result.github}</td>
                                 <td>{data.result.linkedin}</td>
                                 <td>{data.result.location}</td>
+                                <td>{data.result.resume}</td>
                                 <td>
                                     <button
                                         onClick={() => {
